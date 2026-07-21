@@ -24,6 +24,12 @@ cp -R agent-skills/<skill-name> ~/.codex/skills/
 
 Replace `<skill-name>` with a skill directory name. For other agents, copy it to that agent's Skills directory.
 
+## Skills
+
+| Skill category | Description |
+| --- | --- |
+| [Zephyr agent skills](skills/zephyr/README.md) | Reusable skills for Zephyr development, debugging, exploration, patch review, and safety evidence. |
+
 ## Star History
 
 [![Star History Chart](https://api.star-history.com/svg?repos=processmission/agent-skills&type=Date)](https://www.star-history.com/#processmission/agent-skills&Date)
