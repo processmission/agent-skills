@@ -32,4 +32,11 @@ Replace `<skill-name>` with a skill directory name. For other agents, copy it to
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=processmission/agent-skills&type=Date)](https://www.star-history.com/#processmission/agent-skills&Date)
+<a href="https://www.star-history.com/?repos=processmission%2Fagent-skills&type=date&legend=top-left">
+ <picture>
+   <source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=processmission/agent-skills&type=date&theme=dark&legend=top-left&sealed_token=jzAUrMS_qGfKPrCNcxvxmc-coZVVqFtHbSJ9jeKuEEdBksiaGN-RVD3cLDCOMBW00eo8Tl_xUuATrIX-LMLq6H3H4nwpEGflt3p2wsZDIo64SEHyyss-TDPg3P96hU-1gXtO10E5CcczrGfZgPhBnJvT0k3LCQA7dMqE4ezktYojDiwaDjWo68IGVFWG" />
+   <source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=processmission/agent-skills&type=date&legend=top-left&sealed_token=jzAUrMS_qGfKPrCNcxvxmc-coZVVqFtHbSJ9jeKuEEdBksiaGN-RVD3cLDCOMBW00eo8Tl_xUuATrIX-LMLq6H3H4nwpEGflt3p2wsZDIo64SEHyyss-TDPg3P96hU-1gXtO10E5CcczrGfZgPhBnJvT0k3LCQA7dMqE4ezktYojDiwaDjWo68IGVFWG" />
+   <img alt="Star History Chart" src="https://api.star-history.com/chart?repos=processmission/agent-skills&type=date&legend=top-left&sealed_token=jzAUrMS_qGfKPrCNcxvxmc-coZVVqFtHbSJ9jeKuEEdBksiaGN-RVD3cLDCOMBW00eo8Tl_xUuATrIX-LMLq6H3H4nwpEGflt3p2wsZDIo64SEHyyss-TDPg3P96hU-1gXtO10E5CcczrGfZgPhBnJvT0k3LCQA7dMqE4ezktYojDiwaDjWo68IGVFWG" />
+ </picture>
+</a>
+
