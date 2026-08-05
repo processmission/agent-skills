@@ -28,6 +28,7 @@ Replace `<skill-name>` with a skill directory name. For other agents, copy it to
 
 | Skill category | Description |
 | --- | --- |
+| [Interactive GDB debugging](skills/interactive-gdb-debugging/SKILL.md) | Drive persistent GDB sessions safely through tmux for local, remote, QEMU, and core-dump debugging. |
 | [Zephyr agent skills](skills/zephyr/README.md) | Reusable skills for Zephyr development, debugging, exploration, patch review, and safety evidence. |
 
 ## Star History
