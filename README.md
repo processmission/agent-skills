@@ -19,7 +19,7 @@ npx skills add processmission/agent-skills
 
 ```bash
 git clone https://github.com/processmission/agent-skills.git
-cp -R agent-skills/<skill-name> ~/.codex/skills/
+cp -R agent-skills/skills/<skill-name> ~/.codex/skills/
 ```
 
 Replace `<skill-name>` with a skill directory name. For other agents, copy it to that agent's Skills directory.
