@@ -1,0 +1,4 @@
+interface:
+  display_name: "Technical Documentation EN-to-ZH"
+  short_description: "整篇技术文档英译中、双语术语维护、人工审阅与中文站点构建验证"
+  default_prompt: "使用 $docs-translate-zh 翻译当前项目的英文技术文档，维护双语术语表并验证文档结构和构建结果。"
