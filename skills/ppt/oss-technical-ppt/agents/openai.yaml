@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Process Mission
+# SPDX-License-Identifier: MIT
+
+interface:
+  display_name: "OSS Technical PPT"
+  short_description: "Create balanced technical PPTs with visual feedback loops"
+  default_prompt: "Use $oss-technical-ppt to design an editable technical-review presentation, render every revision to images, review the visual balance, and iterate before delivery."
