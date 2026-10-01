@@ -31,6 +31,7 @@ Replace `<skill-name>` with a skill directory name. For other agents, copy it to
 | [Interactive GDB debugging](skills/interactive-gdb-debugging/SKILL.md) | Drive persistent GDB sessions safely through tmux for local, remote, QEMU, and core-dump debugging. |
 | [Zephyr agent skills](skills/zephyr/README.md) | Reusable skills for Zephyr development, debugging, exploration, patch review, and safety evidence. |
 | [Technical documentation translation](skills/docs-translate-zh/README.md) | Full-article English-to-Chinese translation, bilingual terminology, review, and Sphinx publishing verification. |
+| [De-AI writing](skills/de-ai-writing/SKILL.md) | Mark and remove Chinese and English AI writing tics with table-driven rules, unlisted-repetition discovery, a claim diff that blocks paraphrase, and agent review. |
 
 ## Star History
 
