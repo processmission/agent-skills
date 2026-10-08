@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Process Mission
+# SPDX-License-Identifier: MIT
+
+interface:
+  display_name: "De-AI Writing"
+  short_description: "Mark and remove Chinese and English AI writing tics for denser, clearer, calmer prose across model families"
+  default_prompt: "Use $de-ai-writing on this draft. Mark the AI-flavoured passages with scripts/scan_writing.py, check the per-model tables when the source model is known, judge every reported group, remove the tics, and rescan. Keep the facts, the conditions, and the technical detail; add no personality, emotion, or opinion."
