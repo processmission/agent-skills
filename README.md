@@ -32,6 +32,7 @@ Replace `<skill-name>` with a skill directory name. For other agents, copy it to
 | [Zephyr agent skills](skills/zephyr/README.md) | Reusable skills for Zephyr development, debugging, exploration, patch review, and safety evidence. |
 | [Technical documentation translation](skills/docs-translate-zh/README.md) | Full-article English-to-Chinese translation, bilingual terminology, review, and Sphinx publishing verification. |
 | [De-AI writing](skills/de-ai-writing/SKILL.md) | Mark and remove Chinese and English AI writing tics with table-driven rules, unlisted-repetition discovery, a claim diff that blocks paraphrase, and agent review. |
+| [Promo video](skills/promo-video/SKILL.md) | Frame-exact promo and comparison videos rendered from code and real data: a requirements discussion and creative brief, a fact-checked storyboard, a per-film motion plan composed from a GSAP transition and effect library, 1080p or 4K output, an original score in a style chosen with the requester (eleven styles rendered with Csound synths and SoundFont instruments) on a shared bar grid, picture and audio QA, covers, and a Process Mission watermark by default. |
 
 ## Star History
 

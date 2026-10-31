@@ -1,0 +1,7 @@
+# SPDX-FileCopyrightText: Copyright (c) 2026 Process Mission
+# SPDX-License-Identifier: MIT
+
+interface:
+  display_name: "Promo Video"
+  short_description: "Frame-exact promo and comparison videos from code and real data, with GSAP motion, original music in eleven styles, QA, covers, and a Process Mission watermark"
+  default_prompt: "Use $promo-video to make this video. Start by discussing purpose, audience, platform, length, required facts, brand, style references, music, sound, and deliverables with the requester in rounds, and write a creative brief they confirm; render music style previews with compose_music.py --preview and let them choose. Collect the real records and build a fact-check table, choose a narrative structure that fits the brief, write the storyboard, and write a motion plan that picks 3-5 transitions and per-scene effects from assets/motion (GSAP) by content, writing new effects when none fit. Put scene starts on a bar grid, render picture assets from recorded data, write a page for this film following references/page-contract.md, confirm style frames and a short sample, render with scripts/render_frames.py, write a music plan with section energy, chords, and a motif for this film and render it with compose_music.py, master with master_audio.py, run the picture and audio QA, add the default Process Mission watermark, and deliver covers, publishing copy, and a document with the brief, storyboard, motion plan, music plan, and rebuild commands."

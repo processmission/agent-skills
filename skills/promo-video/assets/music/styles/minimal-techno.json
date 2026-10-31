@@ -1,0 +1,60 @@
+{
+  "description": "Minimal techno: four-on-the-floor kick, offbeat hats, rolling sub bass, delayed chord stabs and clicks, with a dark breakdown pad.",
+  "bpm": 124,
+  "bpm_range": [120, 130],
+  "key": "A",
+  "mode": "minor",
+  "bars_per_chord": 2,
+  "progressions": {
+    "default": [["i7", "i7", "iv7", "i7"], ["i7", "VII"]],
+    "intro": [["i7"]],
+    "outro": [["i7"]]
+  },
+  "tracks": {
+    "pad": {"instrument": "pad", "pattern": "hold", "register": [48, 72], "voicing": "drop2", "gain": -20,
+            "brightness": 0.2, "attack": 1.5, "release": 2.0, "reverb": 0.6, "duck": 0.4},
+    "sub": {"instrument": "sawbass", "pattern": "rolling", "register": [33, 45], "gain": -9, "brightness": 0.2,
+            "release": 0.05, "reverb": 0.0, "duck": 0.6},
+    "stab": {"instrument": "stab", "pattern": "stabs", "register": [55, 72], "voicing": "triad", "gain": -7,
+             "brightness": 0.5, "pan": 0.55, "reverb": 0.3, "delay": 0.45, "duck": 0.4},
+    "clicks": {"pattern": "clicks", "gain": -19, "reverb": 0.1, "kit": {"tick": {"drum": "tick", "tone": 0.8, "pan": 0.4}}},
+    "drums": {"pattern": "techno", "gain": -2, "reverb": 0.06,
+              "kit": {"kick": {"drum": "kick", "tone": 0.35}, "hat": {"drum": "hat", "tone": 0.1, "gain": -15, "pan": 0.6},
+                      "open": {"drum": "hat", "tone": 0.55, "gain": -18, "pan": 0.6},
+                      "rim": {"drum": "rim", "gain": -9, "pan": 0.42, "reverb": 0.25},
+                      "clap": {"drum": "clap", "gain": -8, "reverb": 0.3}}}
+  },
+  "patterns": {
+    "hold": {"type": "chord", "hold": true, "velocity": 0.8},
+    "rolling": {"type": "bass", "notes": [[2, 1, "root", 0.9], [3, 1, "root", 0.6], [6, 1, "root", 0.9], [7, 1, "root", 0.6],
+                                          [10, 1, "root", 0.9], [11, 1, "root", 0.6], [14, 1, "octave", 0.8], [15, 1, "root", 0.6]]},
+    "stabs": {"type": "chord", "bars": 2, "hits": [[3, 1, 0.9], [10, 1, 0.7], [19, 1, 0.9], [27, 1, 0.6], [30, 1, 0.7]]},
+    "clicks": {"type": "drums", "tick": [0.5, 0.8, 0.5, 1, 0.5, 0.8, 0.5, 1, 0.5, 0.8, 0.5, 1, 0.5, 0.8, 0.5, 1]},
+    "kick-hat": {"type": "drums",
+                 "kick": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+                 "hat":  [0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0]},
+    "techno": {"type": "drums",
+               "kick": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+               "hat":  [0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0],
+               "rim":  [0, 0, 0, 0.6, 0, 0, 0.5, 0, 0, 0.6, 0, 0, 0, 0, 0.5, 0],
+               "clap": [0, 0, 0, 0, 0.5, 0, 0, 0, 0, 0, 0, 0, 0.5, 0, 0, 0]},
+    "techno-full": {"type": "drums",
+                    "kick": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+                    "hat":  [0.4, 0.4, 0, 0.4, 0.4, 0.4, 0, 0.4, 0.4, 0.4, 0, 0.4, 0.4, 0.4, 0, 0.4],
+                    "open": [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0],
+                    "rim":  [0, 0, 0, 0.6, 0, 0, 0.5, 0, 0, 0.6, 0, 0, 0, 0, 0.5, 0],
+                    "clap": [0, 0, 0, 0, 0.6, 0, 0, 0, 0, 0, 0, 0, 0.6, 0, 0, 0]}
+  },
+  "arrangements": {
+    "0": {"pad": {}, "clicks": {}},
+    "1": {"drums": {"pattern": "kick-hat"}, "clicks": {}},
+    "2": {"drums": {}, "sub": {}},
+    "3": {"drums": {}, "sub": {}, "stab": {}},
+    "4": {"drums": {"pattern": "techno-full"}, "sub": {}, "stab": {}, "clicks": {}}
+  },
+  "mix": {"reverb": {"feedback": 0.85, "level": 0.4}, "delay": {"beats": 0.75, "feedback": 0.5}, "sidechain": 1.0},
+  "master": {"low_shelf": -1.5, "high_shelf": 1.0},
+  "fx": {"hit": [{"instrument": "kick", "amp": 1.0}, {"instrument": "impact", "amp": 0.4}],
+         "riser": [{"instrument": "riser"}]},
+  "preview": {"bars": 8, "energy": [1, 2, 3, 4]}
+}

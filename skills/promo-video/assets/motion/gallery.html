@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- SPDX-FileCopyrightText: Copyright (c) 2026 Process Mission -->
+<!-- SPDX-License-Identifier: MIT -->
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <title>Motion gallery</title>
+  <link rel="stylesheet" href="../node_modules/@fontsource-variable/noto-sans-sc/index.css">
+  <link rel="stylesheet" href="../node_modules/@fontsource-variable/inter-tight/index.css">
+  <link rel="stylesheet" href="../node_modules/@fontsource-variable/jetbrains-mono/index.css">
+  <style>
+    :root { --bg: #0b0c0f; --text: #f3f2ef; --muted: #8e949e; --accent: #ec4a22; --line: rgba(255,255,255,.1);
+      --cjk: "Noto Sans SC Variable", sans-serif; --sans: "Inter Tight Variable", "Noto Sans SC Variable", sans-serif;
+      --mono: "JetBrains Mono Variable", monospace; }
+    * { box-sizing: border-box; }
+    html, body { margin: 0; background: #000; }
+    body { width: 1920px; height: 1080px; overflow: hidden; }
+    #stage { position: relative; width: 1920px; height: 1080px; overflow: hidden; background: var(--bg); color: var(--text);
+      font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    .scene { position: absolute; inset: 0; visibility: hidden; opacity: 0; }
+    .panel-a { background: radial-gradient(circle at 30% 30%, #2a2f38, #121419 70%); }
+    .panel-b { background: radial-gradient(circle at 70% 60%, #c23a17, #4a1307 75%); }
+    .letter { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font: 800 360px/1 var(--sans); opacity: .9; }
+    .caption { position: absolute; left: 0; right: 0; bottom: 120px; text-align: center; font: 500 30px/1.4 var(--cjk); color: var(--muted); }
+    #label { position: absolute; left: 60px; top: 50px; z-index: 80; font: 500 22px/1.5 var(--mono); color: var(--text); }
+    #label b { color: var(--accent); font-weight: 600; }
+    #label small { display: block; color: var(--muted); font-size: 18px; }
+    .title { position: absolute; left: 160px; top: 380px; font: 800 120px/1.1 var(--cjk); }
+    .mono { font-family: var(--mono); }
+    .terminal { position: absolute; left: 360px; top: 380px; width: 1200px; padding: 40px 48px; border-radius: 16px;
+      background: #111317; border: 1px solid var(--line); font: 500 44px/1.4 var(--mono); color: #c9d6e1; }
+    .terminal .prompt { color: var(--accent); }
+    .big { position: absolute; left: 0; right: 0; top: 380px; text-align: center; font: 700 180px/1 var(--mono); color: var(--accent); }
+    .card { position: absolute; border-radius: 18px; border: 1px solid var(--line); background: linear-gradient(180deg, #1c1f26, #14161b);
+      display: flex; align-items: center; justify-content: center; font: 700 44px/1 var(--cjk); }
+    .tile { position: absolute; width: 200px; height: 140px; border-radius: 14px; background: #1e2128; border: 1px solid var(--line); }
+    .tile:nth-child(3n) { background: #3a1a12; border-color: rgba(236,74,34,.5); }
+    .layer { position: absolute; left: 460px; width: 1000px; height: 110px; border-radius: 14px; display: flex; align-items: center;
+      padding: 0 40px; font: 600 38px/1 var(--cjk); background: #1b1e24; border: 1px solid var(--line); }
+    .layer.hot { background: linear-gradient(90deg, rgba(178,38,0,.35), rgba(178,38,0,.08)); border-color: rgba(236,74,34,.6); }
+    .flip-row { position: absolute; left: 260px; top: 380px; width: 1400px; display: flex; gap: 40px; }
+    .flip-row.grid { left: 560px; top: 200px; width: 800px; flex-wrap: wrap; }
+    .flip-row .card { position: relative; width: 320px; height: 280px; }
+    .flip-row.grid .card { width: 380px; height: 300px; }
+    .bar { position: absolute; bottom: 260px; width: 120px; border-radius: 10px 10px 0 0; background: linear-gradient(180deg, #ec4a22, #7a1d08); }
+    .square { position: absolute; width: 36px; height: 36px; border-radius: 6px; background: var(--accent); left: 940px; top: 520px; }
+    .motion-caret { color: var(--accent); margin-left: 6px; }
+  </style>
+</head>
+<body>
+  <div id="stage"><div id="label"></div></div>
+  <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+  <script src="../node_modules/gsap/dist/SplitText.min.js"></script>
+  <script src="../node_modules/gsap/dist/DrawSVGPlugin.min.js"></script>
+  <script src="../node_modules/gsap/dist/MorphSVGPlugin.min.js"></script>
+  <script src="../node_modules/gsap/dist/MotionPathPlugin.min.js"></script>
+  <script src="../node_modules/gsap/dist/ScrambleTextPlugin.min.js"></script>
+  <script src="../node_modules/gsap/dist/TextPlugin.min.js"></script>
+  <script src="../node_modules/gsap/dist/CustomEase.min.js"></script>
+  <script src="../node_modules/gsap/dist/CustomWiggle.min.js"></script>
+  <script src="../node_modules/gsap/dist/Flip.min.js"></script>
+  <script src="../node_modules/gsap/dist/Physics2DPlugin.min.js"></script>
+  <script type="module" src="gallery.js"></script>
+</body>
+</html>
