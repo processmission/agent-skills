@@ -1,0 +1,61 @@
+{
+  "description": "Minor-key electronic score: analogue pads, pulse bass, plucked arpeggios, four-on-the-floor peaks, risers and impacts.",
+  "bpm": 120,
+  "bpm_range": [110, 128],
+  "key": "D",
+  "mode": "minor",
+  "progressions": {
+    "default": [["i", "VI", "III", "VII"], ["i", "VII", "VI", "VII"]],
+    "intro": [["i"]],
+    "build": [["VI", "VII"]],
+    "outro": [["I"]]
+  },
+  "tracks": {
+    "drone": {"instrument": "drone", "pattern": "root", "register": [38, 50], "gain": -15, "attack": 1.5, "release": 0.6},
+    "pad": {"instrument": "pad", "pattern": "hold", "register": [50, 72], "voicing": "spread", "gain": -23,
+            "brightness": 0.45, "attack": 0.6, "release": 1.8, "reverb": 0.5, "duck": 0.45},
+    "bass": {"instrument": "bass", "pattern": "pulse", "register": [33, 48], "gain": -7, "brightness": 0.3,
+             "reverb": 0.05, "duck": 0.55},
+    "arp": {"instrument": "pluck", "pattern": "arp16", "register": [62, 79], "gain": -15, "brightness": 0.55,
+            "reverb": 0.18, "delay": 0.32, "duck": 0.3},
+    "ticks": {"pattern": "ticks", "gain": -27, "reverb": 0.12, "kit": {"tick": {"drum": "tick", "pan": 0.6}}},
+    "drums": {"pattern": "four", "gain": -2.5, "reverb": 0.08,
+              "kit": {"kick": "kick", "clap": {"drum": "clap", "gain": -4, "reverb": 0.28},
+                      "hat": {"drum": "hat", "gain": -18, "tone": 0.08, "pan": 0.58},
+                      "crash": {"drum": "crash", "gain": -10, "tone": 0.6}}}
+  },
+  "patterns": {
+    "root": {"type": "drone", "tone": "root"},
+    "hold": {"type": "chord", "hold": true, "velocity": 0.9},
+    "pulse": {"type": "bass", "notes": [[0, 2, "root", 1], [2, 2, "root", 0.78], [4, 2, "root", 0.78], [6, 2, "root", 0.78],
+                                        [8, 2, "root", 1], [10, 2, "root", 0.78], [12, 2, "root", 0.78], [14, 2, "octave", 0.78]]},
+    "arp16": {"type": "arp", "rate": 1, "order": [0, 1, 2, 3, 4, 3, 2, 1, 0, 2, 3, 5, 4, 3, 2, 1], "octaves": 2,
+              "gate": 1.6, "velocity": [1, 0.82, 0.82, 0.82]},
+    "ticks": {"type": "drums", "tick": [1, 0.7, 0.7, 0.7]},
+    "four": {"type": "drums",
+             "kick": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+             "clap": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+             "hat":  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0]},
+    "four-sixteen": {"type": "drums",
+                     "kick": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+                     "clap": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+                     "hat":  [0.55, 0.55, 1, 0.55, 0.55, 0.55, 1, 0.55, 0.55, 0.55, 1, 0.55, 0.55, 0.55, 1, 0.55]},
+    "four-fill": {"type": "drums",
+                  "kick": [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+                  "clap": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0.45, 0.55, 0.7, 0.9],
+                  "hat":  [0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0]}
+  },
+  "arrangements": {
+    "0": {"drone": {}, "ticks": {}},
+    "1": {"drone": {}, "pad": {}, "ticks": {}},
+    "2": {"pad": {}, "bass": {}, "arp": {}, "ticks": {}},
+    "3": {"pad": {}, "bass": {}, "arp": {}, "drums": {}},
+    "4": {"pad": {}, "bass": {}, "arp": {}, "drums": {"pattern": "four-sixteen"}}
+  },
+  "fills": {"drums": "four-fill"},
+  "entry": {"drums": {"crash": 0.8}},
+  "mix": {"reverb": {"feedback": 0.87, "level": 0.62}, "delay": {"beats": 1.5, "feedback": 0.38}, "sidechain": 1.0},
+  "master": {"low_shelf": -2.0, "high_shelf": 1.2},
+  "fx": {"hit": [{"instrument": "impact"}], "riser": [{"instrument": "riser"}]},
+  "preview": {"bars": 8, "energy": [1, 2, 3, 4]}
+}

@@ -1,0 +1,63 @@
+{
+  "description": "Retro synthwave: octave saw bass, warm analogue pads, plucked arpeggios, gated-reverb snare and a vibrato lead.",
+  "bpm": 108,
+  "bpm_range": [96, 118],
+  "key": "A",
+  "mode": "minor",
+  "progressions": {
+    "default": [["i", "VI", "III", "VII"], ["i", "VII", "VI", "VII"], ["VI", "VII", "i", "i"]],
+    "intro": [["i", "VI"]],
+    "build": [["iv", "VII"]],
+    "outro": [["VI", "i"]]
+  },
+  "tracks": {
+    "pad": {"instrument": "pad", "pattern": "hold", "register": [52, 74], "voicing": "spread", "gain": -24,
+            "brightness": 0.5, "attack": 0.4, "release": 1.2, "reverb": 0.5, "duck": 0.3},
+    "bass": {"instrument": "sawbass", "pattern": "octaves", "register": [33, 52], "gain": -9, "brightness": 0.35,
+             "reverb": 0.05, "duck": 0.3},
+    "arp": {"instrument": "pluck", "pattern": "updown", "register": [60, 79], "gain": -16, "brightness": 0.6,
+            "pan": 0.6, "reverb": 0.2, "delay": 0.35},
+    "lead": {"instrument": "lead", "pattern": "line", "register": [64, 84], "gain": -13, "brightness": 0.45,
+             "reverb": 0.3, "delay": 0.3},
+    "drums": {"pattern": "drive", "gain": -3, "reverb": 0.08,
+              "kit": {"kick": {"drum": "kick", "tone": 0.4}, "snare": {"drum": "gated", "tone": 0.4, "gain": -3},
+                      "hat": {"drum": "hat", "tone": 0.08, "gain": -17, "pan": 0.6},
+                      "tom": {"drum": "tom", "tone": 0.35, "gain": -3, "reverb": 0.3},
+                      "crash": {"drum": "crash", "tone": 0.6, "gain": -11}}}
+  },
+  "patterns": {
+    "hold": {"type": "chord", "hold": true, "velocity": 0.85},
+    "octaves": {"type": "bass", "notes": [[0, 2, "root", 1], [2, 2, "octave", 0.8], [4, 2, "root", 0.9], [6, 2, "octave", 0.8],
+                                          [8, 2, "root", 1], [10, 2, "octave", 0.8], [12, 2, "root", 0.9], [14, 2, "octave", 0.8]]},
+    "updown": {"type": "arp", "rate": 2, "order": [0, 1, 2, 3, 4, 3, 2, 1], "octaves": 2, "gate": 1.2,
+               "velocity": [1, 0.8]},
+    "line": {"type": "melody", "generate": {"density": 0.45, "phrase_bars": 2, "form": ["A", "A2", "B", "A"]}},
+    "drive": {"type": "drums",
+              "kick":  [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+              "snare": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+              "hat":   [0.8, 0, 0.6, 0, 0.8, 0, 0.6, 0, 0.8, 0, 0.6, 0, 0.8, 0, 0.6, 0]},
+    "drive16": {"type": "drums",
+                "kick":  [1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0],
+                "snare": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+                "hat":   [0.8, 0.4, 0.6, 0.4, 0.8, 0.4, 0.6, 0.4, 0.8, 0.4, 0.6, 0.4, 0.8, 0.4, 0.6, 0.4]},
+    "toms-fill": {"type": "drums",
+                  "kick": [1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+                  "snare": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+                  "tom":  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.7, 0, 0.8, 0, 0.9, 1]}
+  },
+  "arrangements": {
+    "0": {"pad": {}},
+    "1": {"pad": {}, "arp": {}},
+    "2": {"pad": {}, "bass": {}, "arp": {}},
+    "3": {"pad": {}, "bass": {}, "arp": {}, "drums": {}},
+    "4": {"pad": {}, "bass": {}, "arp": {}, "lead": {}, "drums": {"pattern": "drive16"}}
+  },
+  "fills": {"drums": "toms-fill"},
+  "entry": {"drums": {"crash": 0.8}},
+  "mix": {"reverb": {"feedback": 0.86, "level": 0.55}, "delay": {"beats": 0.75, "feedback": 0.4}, "sidechain": 0.6,
+          "wow": 0.2},
+  "master": {"low_shelf": -1.5, "high_shelf": 1.5},
+  "fx": {"hit": [{"instrument": "gated", "amp": 1.0}, {"instrument": "impact", "amp": 0.5}],
+         "riser": [{"instrument": "riser"}]},
+  "preview": {"bars": 8, "energy": [1, 2, 3, 4]}
+}

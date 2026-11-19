@@ -1,0 +1,55 @@
+{
+  "description": "Future bass: pumping supersaw chords on major sevenths, a halftime beat, 808 sub, and a plucked hook.",
+  "bpm": 150,
+  "bpm_range": [140, 160],
+  "key": "C",
+  "mode": "major",
+  "progressions": {
+    "default": [["IVmaj7", "V", "iii7", "vi7"], ["vi7", "IVmaj7", "I", "V"]],
+    "intro": [["IVmaj7", "V"]],
+    "build": [["IV", "V"]],
+    "outro": [["IVmaj7", "Imaj7"]]
+  },
+  "tracks": {
+    "pad": {"instrument": "supersaw", "pattern": "hold", "register": [53, 79], "voicing": "open", "gain": -21,
+            "brightness": 0.35, "attack": 0.6, "release": 1.2, "reverb": 0.5, "duck": 0.5},
+    "chords": {"instrument": "supersaw", "pattern": "pump", "register": [53, 79], "voicing": "open", "gain": -8,
+               "brightness": 0.6, "attack": 0.005, "release": 0.15, "reverb": 0.3, "duck": 0.85},
+    "sub": {"instrument": "bass808", "pattern": "sub", "register": [29, 43], "gain": -13, "brightness": 0.35,
+            "release": 0.1, "reverb": 0.0, "duck": 0.3},
+    "hook": {"instrument": "string", "pattern": "hook", "register": [67, 86], "gain": -11, "brightness": 0.7,
+             "reverb": 0.3, "delay": 0.3},
+    "drums": {"pattern": "halftime", "gain": -3, "reverb": 0.1,
+              "kit": {"kick": {"drum": "kick", "tone": 0.5}, "snare": {"drum": "snare", "tone": 0.6, "gain": -2, "reverb": 0.3},
+                      "clap": {"drum": "clap", "gain": -5, "reverb": 0.3},
+                      "hat": {"drum": "hat", "tone": 0.05, "gain": -16, "pan": 0.6},
+                      "crash": {"drum": "crash", "tone": 0.7, "gain": -10}}}
+  },
+  "patterns": {
+    "hold": {"type": "chord", "hold": true, "velocity": 0.8},
+    "pump": {"type": "chord", "hits": [[0, 3, 1], [4, 2, 0.75], [6, 2, 0.8], [10, 2, 0.75], [12, 4, 0.9]]},
+    "sub": {"type": "bass", "notes": [[0, 6, "root", 1], [8, 6, "root", 0.9], [14, 2, "octave", 0.7]]},
+    "hook": {"type": "melody", "generate": {"density": 0.55, "phrase_bars": 2, "form": ["A", "A2", "B", "A2"]}},
+    "halftime": {"type": "drums",
+                 "kick":  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 0],
+                 "snare": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+                 "clap":  [0, 0, 0, 0, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 0, 0, 0],
+                 "hat":   [0.7, 0, 0.5, 0, 0.7, 0, 0.5, 0, 0.7, 0, 0.5, 0, 0.7, 0.4, 0.5, 0.4]},
+    "build": {"type": "drums",
+              "snare": [0.3, 0, 0.35, 0, 0.4, 0, 0.45, 0, 0.5, 0.5, 0.6, 0.6, 0.7, 0.8, 0.9, 1]}
+  },
+  "arrangements": {
+    "0": {"pad": {}},
+    "1": {"pad": {}, "hook": {}},
+    "2": {"chords": {}, "sub": {}},
+    "3": {"chords": {}, "sub": {}, "drums": {}},
+    "4": {"chords": {}, "sub": {}, "drums": {}, "hook": {}}
+  },
+  "fills": {"drums": "build"},
+  "entry": {"drums": {"crash": 0.8}},
+  "mix": {"reverb": {"feedback": 0.85, "level": 0.5}, "delay": {"beats": 0.75, "feedback": 0.35}, "sidechain": 1.0},
+  "master": {"low_shelf": -1.0, "high_shelf": 2.0},
+  "fx": {"hit": [{"instrument": "impact", "amp": 0.7}, {"instrument": "clap", "amp": 0.8}],
+         "riser": [{"instrument": "riser"}, {"instrument": "reverse", "amp": 0.5}]},
+  "preview": {"bars": 8, "energy": [1, 2, 3, 4]}
+}

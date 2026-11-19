@@ -1,0 +1,56 @@
+{
+  "description": "Mellow lo-fi: swung electric-piano sevenths, upright bass, soft boom-bap drums, vinyl crackle, a tape-dark top end.",
+  "bpm": 82,
+  "bpm_range": [70, 92],
+  "key": "F",
+  "mode": "major",
+  "swing": 0.58,
+  "humanize": {"time": 0.008, "velocity": 0.1},
+  "progressions": {
+    "default": [["ii7", "V7", "Imaj7", "vi7"], ["IVmaj7", "iii7", "ii7", "Imaj7"], ["vi7", "ii7", "V7", "Imaj7"]],
+    "intro": [["ii7", "V7"]],
+    "outro": [["IVmaj7", "Imaj7"]]
+  },
+  "tracks": {
+    "keys": {"instrument": "epiano", "pattern": "comp", "register": [50, 74], "voicing": "drop2", "gain": -10,
+             "brightness": 0.35, "release": 0.4, "reverb": 0.3},
+    "pad": {"instrument": "pad", "pattern": "hold", "register": [50, 74], "voicing": "drop2", "gain": -22,
+            "brightness": 0.25, "attack": 1.2, "release": 2.0, "reverb": 0.5},
+    "bass": {"engine": "soundfont", "program": 32, "pattern": "lazy", "register": [28, 48], "gain": -1, "reverb": 0.05},
+    "lead": {"instrument": "mallet", "pattern": "line", "register": [67, 86], "gain": -10, "brightness": 0.35,
+             "reverb": 0.35, "delay": 0.2},
+    "vinyl": {"instrument": "vinyl", "pattern": "bed", "gain": 0, "brightness": 0.4},
+    "drums": {"pattern": "boom", "gain": 2, "reverb": 0.1,
+              "kit": {"kick": {"drum": "softkick", "tone": 0.4}, "snare": {"drum": "snare", "tone": 0.25, "gain": -4},
+                      "hat": {"drum": "hat", "tone": 0.04, "gain": -15, "pan": 0.6},
+                      "rim": {"drum": "rim", "gain": -8}}}
+  },
+  "patterns": {
+    "hold": {"type": "chord", "hold": true, "velocity": 0.7},
+    "comp": {"type": "chord", "hits": [[0, 6, 0.8], [6, 2, 0.55], [10, 5, 0.7]]},
+    "lazy": {"type": "bass", "notes": [[0, 6, "root", 0.9], [7, 1, "fifth", 0.5], [8, 5, "root", 0.75], [14, 2, "approach", 0.6]]},
+    "line": {"type": "melody", "generate": {"density": 0.35, "phrase_bars": 2, "form": ["A", "B", "A2", "B"]}},
+    "bed": {"type": "texture"},
+    "boom": {"type": "drums",
+             "kick":  [1, 0, 0, 0, 0, 0, 0, 0.6, 0, 0, 1, 0, 0, 0, 0, 0],
+             "snare": [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+             "hat":   [0.8, 0, 0.5, 0, 0.8, 0, 0.5, 0, 0.8, 0, 0.5, 0, 0.8, 0, 0.5, 0.3]},
+    "rims": {"type": "drums",
+             "kick": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 0],
+             "rim":  [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0],
+             "hat":  [0.6, 0, 0.4, 0, 0.6, 0, 0.4, 0, 0.6, 0, 0.4, 0, 0.6, 0, 0.4, 0]}
+  },
+  "arrangements": {
+    "0": {"vinyl": {}, "pad": {}},
+    "1": {"vinyl": {}, "keys": {}},
+    "2": {"vinyl": {}, "keys": {}, "bass": {}, "drums": {"pattern": "rims"}},
+    "3": {"vinyl": {}, "keys": {}, "bass": {}, "drums": {}},
+    "4": {"vinyl": {}, "keys": {}, "bass": {}, "drums": {}, "lead": {}}
+  },
+  "mix": {"reverb": {"feedback": 0.82, "level": 0.5}, "delay": {"beats": 0.75, "feedback": 0.35}, "room": 0.55,
+          "lowpass": 7000, "drive": 3, "bits": 12, "wow": 0.15},
+  "master": {"low_shelf": 0.0, "high_shelf": -1.0},
+  "fx": {"hit": [{"instrument": "crash", "tone": 0.3, "amp": 0.4}, {"instrument": "softkick", "amp": 0.9}],
+         "riser": [{"instrument": "reverse", "amp": 0.5}]},
+  "preview": {"bars": 8, "energy": [1, 2, 3, 4]}
+}

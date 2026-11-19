@@ -1,0 +1,57 @@
+{
+  "description": "Trap: halftime drums with rolling hats and open hats, long 808 bass, dark bell arpeggios over a minor pad.",
+  "bpm": 140,
+  "bpm_range": [130, 150],
+  "key": "C",
+  "mode": "minor",
+  "humanize": {"time": 0.003, "velocity": 0.06},
+  "progressions": {
+    "default": [["i", "VI"], ["i", "iv", "VI", "V"], ["i", "VI", "III", "VII"]],
+    "intro": [["i"]],
+    "outro": [["VI", "i"]]
+  },
+  "bars_per_chord": 2,
+  "tracks": {
+    "pad": {"instrument": "pad", "pattern": "hold", "register": [48, 70], "voicing": "spread", "gain": -21,
+            "brightness": 0.3, "attack": 1.0, "release": 1.5, "reverb": 0.5},
+    "bells": {"instrument": "mallet", "pattern": "bells", "register": [67, 86], "gain": -10, "brightness": 0.6,
+              "pan": 0.55, "reverb": 0.4, "delay": 0.25},
+    "808": {"instrument": "bass808", "pattern": "slides", "register": [24, 40], "gain": -10, "brightness": 0.5,
+            "release": 0.15, "reverb": 0.0},
+    "drums": {"pattern": "trap", "gain": -1, "reverb": 0.08,
+              "kit": {"kick": {"drum": "kick", "tone": 0.4}, "clap": {"drum": "clap", "gain": -2, "reverb": 0.25},
+                      "snare": {"drum": "snare", "tone": 0.5, "gain": -5},
+                      "hat": {"drum": "hat", "tone": 0.03, "gain": -15, "pan": 0.6},
+                      "open": {"drum": "hat", "tone": 0.6, "gain": -17, "pan": 0.6},
+                      "crash": {"drum": "crash", "tone": 0.5, "gain": -12}}}
+  },
+  "patterns": {
+    "hold": {"type": "chord", "hold": true, "velocity": 0.8},
+    "bells": {"type": "arp", "rate": 2, "order": [0, 2, 1, 3, 2, 1, 0, 1], "octaves": 2, "gate": 1.5,
+              "velocity": [1, 0.75, 0.85, 0.75]},
+    "slides": {"type": "bass", "notes": [[0, 6, "root", 1], [7, 2, "root", 0.8], [10, 4, "root", 0.9], [14, 2, "fifth", 0.7]]},
+    "trap": {"type": "drums", "bars": 2,
+             "kick":  [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 0, 1, 0, 0, 0.7, 0, 0, 0, 0, 0, 0, 0.8, 0, 0, 0, 0, 0],
+             "clap":  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+             "snare": [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0],
+             "hat":   [0.8, 0, 0.6, 0, 0.8, 0, 0.6, 0, 0.8, 0, 0.6, 0, 0.8, 0, 0.6, 0,
+                       0.8, 0, 0.6, 0, 0.8, 0, 0.6, 0, 0.8, 0.5, 0.6, 0.5, 0.7, 0.6, 0.7, 0.8],
+             "open":  [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+    "sparse": {"type": "drums",
+               "kick": [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
+               "hat":  [0.6, 0, 0.4, 0, 0.6, 0, 0.4, 0, 0.6, 0, 0.4, 0, 0.6, 0, 0.4, 0]}
+  },
+  "arrangements": {
+    "0": {"pad": {}},
+    "1": {"pad": {}, "bells": {}},
+    "2": {"bells": {}, "808": {}, "drums": {"pattern": "sparse"}},
+    "3": {"bells": {}, "808": {}, "drums": {}},
+    "4": {"bells": {}, "808": {}, "drums": {}, "pad": {}}
+  },
+  "entry": {"drums": {"crash": 0.7}},
+  "mix": {"reverb": {"feedback": 0.85, "level": 0.4}, "delay": {"beats": 0.75, "feedback": 0.3}},
+  "master": {"low_shelf": -2.5, "high_shelf": 1.5},
+  "fx": {"hit": [{"instrument": "kick", "tone": 0.2, "amp": 1.0}, {"instrument": "crash", "tone": 0.5, "amp": 0.4}],
+         "riser": [{"instrument": "reverse"}]},
+  "preview": {"bars": 8, "energy": [1, 2, 3, 4]}
+}

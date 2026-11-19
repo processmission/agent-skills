@@ -1,0 +1,40 @@
+{
+  "description": "Piano and strings: broken-chord piano with pedal, a lyrical melody, swelling strings and cello, for stories and closing moments.",
+  "bpm": 76,
+  "bpm_range": [60, 90],
+  "key": "C",
+  "mode": "major",
+  "humanize": {"time": 0.008, "velocity": 0.08},
+  "progressions": {
+    "default": [["vi", "IV", "I", "V"], ["I", "V", "vi", "iii", "IV", "I", "IV", "V"], ["IV", "V", "iii", "vi"]],
+    "intro": [["vi", "IV"]],
+    "outro": [["IV", "I"]]
+  },
+  "tracks": {
+    "piano": {"engine": "soundfont", "program": 0, "pattern": "broken", "register": [36, 72], "voicing": "spread",
+              "gain": -2, "sustain": true, "reverb": 0.4},
+    "melody": {"engine": "soundfont", "program": 0, "pattern": "song", "register": [67, 88], "gain": -8, "reverb": 0.45},
+    "violin": {"engine": "soundfont", "program": 40, "pattern": "song", "register": [67, 86], "gain": -10, "reverb": 0.5},
+    "strings": {"engine": "soundfont", "program": 48, "pattern": "hold", "register": [48, 76], "voicing": "spread",
+                "gain": -9, "swell": true, "reverb": 0.5},
+    "cello": {"engine": "soundfont", "program": 42, "pattern": "halves", "register": [36, 55], "gain": -13, "reverb": 0.4}
+  },
+  "patterns": {
+    "hold": {"type": "chord", "hold": true, "velocity": 0.75},
+    "broken": {"type": "arp", "rate": 2, "order": [0, 1, 2, 3, 1, 2, 3, 2], "octaves": 1, "gate": 2.5,
+               "velocity": [0.9, 0.6, 0.7, 0.6]},
+    "song": {"type": "melody", "generate": {"density": 0.3, "phrase_bars": 2, "form": ["A", "A2", "B", "A"]}},
+    "halves": {"type": "bass", "notes": [[0, 8, "root", 0.85], [8, 8, "fifth", 0.7]]}
+  },
+  "arrangements": {
+    "0": {"piano": {}},
+    "1": {"piano": {}, "melody": {}},
+    "2": {"piano": {}, "strings": {}, "melody": {}},
+    "3": {"piano": {}, "strings": {}, "cello": {}, "melody": {}},
+    "4": {"piano": {}, "strings": {}, "cello": {}, "violin": {}}
+  },
+  "mix": {"reverb": {"feedback": 0.86, "level": 0.5}, "delay": {"beats": 1.0, "feedback": 0.2}, "room": 0.7},
+  "master": {"low_shelf": -1.0, "high_shelf": 0.5},
+  "fx": {"hit": [{"program": 47, "note": 36, "velocity": 0.9, "length": 3.0}], "riser": [{"instrument": "swell"}]},
+  "preview": {"bars": 8, "energy": [1, 2, 3, 4]}
+}

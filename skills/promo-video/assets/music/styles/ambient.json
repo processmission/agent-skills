@@ -1,0 +1,43 @@
+{
+  "description": "Ambient bed without drums: slow analogue pads, a low drone, sparse mallets and piano phrases in a long reverb.",
+  "bpm": 72,
+  "bpm_range": [56, 84],
+  "key": "E",
+  "mode": "major",
+  "bars_per_chord": 2,
+  "humanize": {"time": 0.01, "velocity": 0.08},
+  "progressions": {
+    "default": [["I", "IV", "vi", "V"], ["IVmaj7", "I", "vi7", "Vsus4"], ["vi", "IV", "I", "V"]],
+    "intro": [["I", "IV"]],
+    "outro": [["IV", "I"]]
+  },
+  "tracks": {
+    "drone": {"instrument": "drone", "pattern": "root", "register": [40, 52], "gain": -16, "brightness": 0.35,
+              "attack": 3.0, "release": 2.0, "reverb": 0.4},
+    "pad": {"instrument": "pad", "pattern": "hold", "register": [52, 76], "voicing": "spread", "gain": -19,
+            "brightness": 0.35, "attack": 3.0, "release": 4.0, "reverb": 0.7},
+    "bells": {"instrument": "mallet", "pattern": "sparse", "register": [72, 91], "gain": -9, "brightness": 0.3,
+              "pan": 0.62, "reverb": 0.6, "delay": 0.35},
+    "piano": {"engine": "soundfont", "program": 0, "pattern": "phrases", "register": [60, 84], "gain": -6, "reverb": 0.6},
+    "strings": {"engine": "soundfont", "program": 49, "pattern": "hold", "register": [52, 76], "voicing": "spread",
+                "gain": -13, "swell": true, "reverb": 0.6}
+  },
+  "patterns": {
+    "root": {"type": "drone", "tone": "root", "follow": true},
+    "hold": {"type": "chord", "hold": true, "velocity": 0.7},
+    "sparse": {"type": "arp", "rate": 4, "order": [0, null, 2, null, 1, null, 3, null], "octaves": 2, "gate": 2.0,
+               "velocity": [0.9, 0.7]},
+    "phrases": {"type": "melody", "generate": {"density": 0.2, "phrase_bars": 4, "form": ["A", "B"]}}
+  },
+  "arrangements": {
+    "0": {"drone": {}, "pad": {}},
+    "1": {"pad": {}, "bells": {}},
+    "2": {"pad": {}, "piano": {}, "bells": {}},
+    "3": {"drone": {}, "pad": {}, "piano": {}, "strings": {}, "bells": {}},
+    "4": {"drone": {}, "pad": {}, "piano": {}, "strings": {}, "bells": {"velocity": 1.2}}
+  },
+  "mix": {"reverb": {"feedback": 0.92, "level": 0.7}, "delay": {"beats": 1.5, "feedback": 0.45}, "room": 0.9},
+  "master": {"low_shelf": -1.0, "high_shelf": 1.0},
+  "fx": {"hit": [{"instrument": "impact", "amp": 0.4, "shimmer": 1.0}], "riser": [{"instrument": "swell"}]},
+  "preview": {"bars": 8, "energy": [0, 1, 2, 3]}
+}

@@ -1,0 +1,16 @@
+{
+  "fps": 30,
+  "bpm": 120,
+  "duration": 16,
+  "personality": "precise",
+  "scenes": [
+    { "id": "title", "start": 0 },
+    { "id": "points", "start": 6, "transition": { "type": "band", "duration": 1, "lead": 0.5, "color": "#ec4a22", "accent": "#f3f2ef" } },
+    { "id": "close", "start": 12, "transition": { "type": "iris", "duration": 0.9, "lead": 0.45, "x": "50%", "y": "46%" } }
+  ],
+  "subtitles": [
+    [0.6, 5.4, "一句话说清这支片子要证明什么。"],
+    [6.6, 11.4, "每个数字都来自可以复现的记录。"],
+    [12.6, 15.4, "片尾留给产品名称与联系方式。"]
+  ]
+}

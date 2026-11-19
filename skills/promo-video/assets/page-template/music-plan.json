@@ -1,0 +1,20 @@
+{
+  "style": "cinematic-tech",
+  "bpm": 120,
+  "duration": 16,
+  "key": "D",
+  "mode": "minor",
+  "seed": 7,
+  "sections": [
+    {"name": "title", "start": 0, "end": 6, "energy": 1, "chords": ["i"], "bars_per_chord": 3, "level": -2},
+    {"name": "points", "start": 6, "end": 12, "energy": 3, "chords": ["VI", "III", "VII"], "level": 0},
+    {"name": "close", "start": 12, "end": 16, "energy": 1, "chords": ["I"], "bars_per_chord": 2, "level": 0.4,
+     "tracks": {"ticks": false}}
+  ],
+  "hits": [{"t": 6, "amp": 0.6, "shimmer": 0.55}],
+  "bells": [
+    {"t": 12.9, "note": "A5", "amp": 0.12},
+    {"t": 13.4, "note": "D6", "amp": 0.12},
+    {"t": 13.9, "note": "F#6", "amp": 0.12, "duration": 2.6}
+  ]
+}

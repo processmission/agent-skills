@@ -1,0 +1,56 @@
+/* SPDX-FileCopyrightText: Copyright (c) 2026 Process Mission */
+/* SPDX-License-Identifier: MIT */
+
+:root {
+  --bg: #0b0c0f;
+  --text: #f3f2ef;
+  --muted: #8e949e;
+  --accent: #ec4a22;
+  --accent-deep: #b22600;
+  --line: rgba(255, 255, 255, .09);
+  --sans: "Inter Tight Variable", "Noto Sans SC Variable", "PingFang SC", sans-serif;
+  --cjk: "Noto Sans SC Variable", "PingFang SC", sans-serif;
+  --mono: "JetBrains Mono Variable", "Noto Sans SC Variable", monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #000; }
+body { width: 1920px; height: 1080px; overflow: hidden; }
+
+#stage {
+  position: relative; width: 1920px; height: 1080px; overflow: hidden;
+  background: var(--bg); color: var(--text); font-family: var(--sans); -webkit-font-smoothing: antialiased;
+}
+/* Scenes are opaque: clip-path transitions (wipe, iris, split) reveal the incoming scene over the outgoing one. */
+.backdrop, .scene {
+  background-color: var(--bg);
+  background-image: linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.backdrop { position: absolute; inset: 0; }
+#scenes, .scene { position: absolute; inset: 0; }
+.scene { visibility: hidden; opacity: 0; }
+.abs { position: absolute; }
+.kicker { font: 500 20px/1 var(--mono); letter-spacing: .16em; color: var(--accent); text-transform: uppercase; }
+.headline { font: 800 96px/1.08 var(--cjk); letter-spacing: -.01em; }
+.subhead { font: 400 32px/1.6 var(--cjk); color: var(--muted); }
+.mask { display: block; overflow: hidden; padding-bottom: .08em; }
+.mask > span { display: inline-block; }
+.card {
+  position: absolute; border-radius: 18px; border: 1px solid var(--line); padding: 44px 40px;
+  background: linear-gradient(180deg, rgba(255,255,255,.035), rgba(255,255,255,.012));
+}
+.card b { display: block; font: 600 88px/1 var(--mono); color: var(--accent); }
+.card span { display: block; margin-top: 18px; font: 400 26px/1.4 var(--cjk); color: #c9ccd1; }
+
+#subtitles {
+  position: absolute; left: 0; right: 0; bottom: 64px; text-align: center; opacity: 0;
+  font: 500 36px/1.4 var(--cjk); text-shadow: 0 2px 12px rgba(0,0,0,.7);
+}
+#subtitles span { display: inline-block; max-width: 1600px; padding: 6px 18px; border-radius: 8px; background: rgba(10,11,14,.6); }
+
+#dev { position: fixed; left: 0; right: 0; bottom: 0; display: flex; gap: 12px; align-items: center; padding: 8px 16px;
+  background: rgba(0,0,0,.8); color: #fff; font: 14px var(--mono); }
+#dev input { flex: 1; }
+#dev[hidden] { display: none; }
